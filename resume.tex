@@ -51,6 +51,7 @@
 \usepackage[marginparsep=-1em]{geometry}
 \newcommand{\MarginText}[1]{\marginpar{\raggedleft\itshape\small#1}} % New command defining the margin text style
 
+\newcommand{\SectionName}[1]{\noindent\spacedlowsmallcaps{#1}\vspace{0.25em}}
 
 %----------------------------------------------------------------------------------------
 
@@ -64,7 +65,7 @@
 
 \begin{cv}{\spacedallcaps{Nick Girardo}}\vspace{1.5em} % Your name
 
-\noindent\spacedlowsmallcaps{Personal Information}\vspace{0.5em} % Personal information heading
+\SectionName{Personal Information} % Personal information heading
 
 \PersonalInfoItem{email}{\href{mailto:nickgirardo@gmail.com}{nickgirardo@gmail.com}} % Email address
 
@@ -80,7 +81,7 @@
 %	EDUCATION
 %----------------------------------------------------------------------------------------
 
-\spacedlowsmallcaps{Education}\vspace{0.25em}
+\SectionName{Education}
 
 \NewEntry{Rutgers, the State University of New Jersey, New Brunswick}{2012-2016}{Major in Computer Science, School of Arts and Sciences}
 
@@ -92,7 +93,7 @@
 %	WORK EXPERIENCE
 %----------------------------------------------------------------------------------------
 
-\noindent\spacedlowsmallcaps{Work Experience}\vspace{0.25em}
+\SectionName{Work Experience}
 
 \NewEntry{Software Engineer -- Sketchdeck Inc.}{Fall 2016--\newline Winter 2018}{Replace dummy data here! Developed spreadsheets for risk analysis on exotic derivatives on a wide array of commodities (ags, oils, precious and base metals), managed blotter and secondary trades on structured notes, liaised with Middle Office, Sales and Structuring for bookkeeping. \\ Reference: John \textsc{McDonald}\ \ $\cdotp$\ \ +1 (000) 111 1111\ \ $\cdotp$\ \ \href{mailto:john@lehman.com}{john@lehman.com}}
 
@@ -112,7 +113,7 @@
 %	PUBLICATIONS
 %----------------------------------------------------------------------------------------
 
-\spacedlowsmallcaps{Publications}\vspace{0.25em}
+\SectionName{Projects}
 
 \end{cv}
 
