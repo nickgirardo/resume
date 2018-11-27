@@ -35,10 +35,18 @@
 
 \newlength{\datebox}\settowidth{\datebox}{Spring 2011} % Set the width of the date box in each block
 
-\newcommand{\NewEntry}[3]{\noindent\hangindent=2em\hangafter=0 \parbox{\datebox}{\small \textit{#1}}\hspace{1.5em} #2 #3 % Define a command for each new block - change spacing and font sizes here: #1 is the left margin, #2 is the italic date field and #3 is the position/employer/location field
-\vspace{0.25em}} % Add some white space after each new entry
+\newcommand{\Description}[2]{\hangindent=2em\hangafter=0\noindent\raggedright\footnotesize{\MarginText{#1}#2}\par\normalsize\vspace{0.5em}} % Define a command for descriptions of each entry - change spacing and font sizes here
 
-\newcommand{\Description}[1]{\hangindent=2em\hangafter=0\noindent\raggedright\footnotesize{#1}\par\normalsize\vspace{0.5em}} % Define a command for descriptions of each entry - change spacing and font sizes here
+% Define a command for each new block - change spacing and font sizes here: #1 is the main title, #2 and #3 form the description
+\newcommand{\NewEntry}[3]{\noindent\hangindent=2em\hangafter=0 #1
+\vspace{0.25em}
+
+\Description{#2}{#3}
+
+}
+
+\newcommand{\PersonalInfoItem}[2]{\noindent \small \MarginText{\textit{#1}}\hspace{2em}#2 % Define a command for each new block - change spacing and font sizes here: #1 is the left margin, #2 is the italic date field and #3 is the position/employer/location field
+\vspace{0.25em}} % Add some white space after each new entry
 
 \usepackage[marginparsep=-1em]{geometry}
 \newcommand{\MarginText}[1]{\marginpar{\raggedleft\itshape\small#1}} % New command defining the margin text style
@@ -58,13 +66,13 @@
 
 \noindent\spacedlowsmallcaps{Personal Information}\vspace{0.5em} % Personal information heading
 
-\NewEntry{email}{\href{mailto:nickgirardo@gmail.com}{nickgirardo@gmail.com}} % Email address
+\PersonalInfoItem{email}{\href{mailto:nickgirardo@gmail.com}{nickgirardo@gmail.com}} % Email address
 
-\NewEntry{website}{\href{https://nickgirardo.github.io/}{https://nickgirardo.github.io/}} % Personal website
+\PersonalInfoItem{website}{\href{https://nickgirardo.github.io/}{https://nickgirardo.github.io/}} % Personal website
 
-\NewEntry{github}{\href{https://github.com/nickgirardo}{nickgirardo}} % Github profile
+\PersonalInfoItem{github}{\href{https://github.com/nickgirardo}{nickgirardo}} % Github profile
 
-\NewEntry{phone}{+1 (856) 520-5481} % Phone number
+\PersonalInfoItem{phone}{+1 (856) 520-5481} % Phone number
 
 \vspace{1em} % Extra white space after the personal information section
 
@@ -74,9 +82,7 @@
 
 \spacedlowsmallcaps{Education}\vspace{0.25em}
 
-\NewEntry{}{Rutgers, the State University of New Jersey, New Brunswick}
-
-\Description{\MarginText{2012-2016}Major in Computer Science, School of Arts and Sciences}
+\NewEntry{Rutgers, the State University of New Jersey, New Brunswick}{2012-2016}{Major in Computer Science, School of Arts and Sciences}
 
 %------------------------------------------------
 
@@ -88,21 +94,15 @@
 
 \noindent\spacedlowsmallcaps{Work Experience}\vspace{0.25em}
 
-\NewEntry{}{Software Engineer -- Sketchdeck Inc.}
-
-\Description{\MarginText{Fall 2016--\newline Winter 2018}Replace dummy data here! Developed spreadsheets for risk analysis on exotic derivatives on a wide array of commodities (ags, oils, precious and base metals), managed blotter and secondary trades on structured notes, liaised with Middle Office, Sales and Structuring for bookkeeping. \\ Reference: John \textsc{McDonald}\ \ $\cdotp$\ \ +1 (000) 111 1111\ \ $\cdotp$\ \ \href{mailto:john@lehman.com}{john@lehman.com}}
+\NewEntry{Software Engineer -- Sketchdeck Inc.}{Fall 2016--\newline Winter 2018}{Replace dummy data here! Developed spreadsheets for risk analysis on exotic derivatives on a wide array of commodities (ags, oils, precious and base metals), managed blotter and secondary trades on structured notes, liaised with Middle Office, Sales and Structuring for bookkeeping. \\ Reference: John \textsc{McDonald}\ \ $\cdotp$\ \ +1 (000) 111 1111\ \ $\cdotp$\ \ \href{mailto:john@lehman.com}{john@lehman.com}}
 
 %------------------------------------------------
 
-\NewEntry{}{Software Engineering Intern -- Addteq Inc.}
-
-\Description{\MarginText{Summer 2015}Replace dummy data here! Rated "truly distinctive" for Analytical Skills and Teamwork. \\ Reference: Bill \textsc{Lumbergh}\ \ +1 (000) 111 1111\ \ $\cdotp$\ \ \href{mailto:bill@initech.com}{bill@initech.com}}
+\NewEntry{Software Engineering Intern -- Addteq Inc.}{Summer 2015}{Replace dummy data here! Rated "truly distinctive" for Analytical Skills and Teamwork. \\ Reference: Bill \textsc{Lumbergh}\ \ +1 (000) 111 1111\ \ $\cdotp$\ \ \href{mailto:bill@initech.com}{bill@initech.com}}
 
 %------------------------------------------------
 
-\NewEntry{}{Software Engineer -- Rutgers University}
-
-\Description{\MarginText{Fall 2013--\newline Winter 2014}Replace dummy data here! Worked in the Nerd Herd and helped to solve computer problems by asking customers to turn their computers off and on again. \\ Reference: Big \textsc{Mike}\ \ +1 (000) 111 1111\ \ $\cdotp$\ \ \href{mailto:mike@buymore.com}{mike@buymore.com}}
+\NewEntry{Software Engineer -- Rutgers University}{Fall 2013--\newline Winter 2014}{Replace dummy data here! Worked in the Nerd Herd and helped to solve computer problems by asking customers to turn their computers off and on again. \\ Reference: Big \textsc{Mike}\ \ +1 (000) 111 1111\ \ $\cdotp$\ \ \href{mailto:mike@buymore.com}{mike@buymore.com}}
 
 %------------------------------------------------
 
@@ -113,18 +113,6 @@
 %----------------------------------------------------------------------------------------
 
 \spacedlowsmallcaps{Publications}\vspace{0.25em}
-
-\NewEntry{January 2013}{Publication Title}
-
-\Description{\MarginText{Full Journal Name}Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nisl tellus, sodales non pulvinar in, adipiscing sit amet purus. Suspendisse sed facilisis diam. Sed ornare sem nec justo adipiscing nec venenatis lectus commodo. Mauris non neque ligula. Pellentesque sed quam eu felis iaculis iaculis ac a leo. Suspendisse neque neque, placerat id adipiscing et, elementum eu sem.\\ Authors: John \textsc{Smith}, ~James \textsc{Smith}}
-
-%------------------------------------------------
-
-\NewEntry{Sept. 2012}{Publication Title}
-
-\Description{\MarginText{Full Journal Name}Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nisl tellus, sodales non pulvinar in, adipiscing sit amet purus. Suspendisse sed facilisis diam. Sed ornare sem nec justo adipiscing nec venenatis lectus commodo. Mauris non neque ligula. Pellentesque sed quam eu felis iaculis iaculis ac a leo. Suspendisse neque neque, placerat id adipiscing et, elementum eu sem.\\ Authors: John \textsc{Smith}, ~James \textsc{Smith}}
-
-%------------------------------------------------
 
 \end{cv}
 
