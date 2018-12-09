@@ -45,7 +45,9 @@
 
 }
 
-\newcommand{\PersonalInfoItem}[2]{\noindent \small \MarginText{\textit{#1}}\hspace{2em}#2 % Define a command for each new block - change spacing and font sizes here: #1 is the left margin, #2 is the italic date field and #3 is the position/employer/location field
+% Command for creating person info items, #1 is name of field, #2 is value
+% ex usage \PersonalInfoItem{email}{nickgirardo@gmail.com}
+\newcommand{\PersonalInfoItem}[2]{\noindent \small \MarginText{\textit{#1}}\hspace{2em}#2
 \vspace{0.25em}} % Add some white space after each new entry
 
 \usepackage[marginparsep=-1em]{geometry}
@@ -85,8 +87,6 @@
 
 \NewEntry{Rutgers, the State University of New Jersey, New Brunswick}{2012-2016}{Major in Computer Science, School of Arts and Sciences}
 
-%------------------------------------------------
-
 \vspace{1em} % Extra space between major sections
 
 %----------------------------------------------------------------------------------------
@@ -95,22 +95,20 @@
 
 \SectionName{Work Experience}
 
-\NewEntry{Software Engineer -- Sketchdeck Inc.}{Fall 2016--\newline Winter 2018}{Replace dummy data here! Developed spreadsheets for risk analysis on exotic derivatives on a wide array of commodities (ags, oils, precious and base metals), managed blotter and secondary trades on structured notes, liaised with Middle Office, Sales and Structuring for bookkeeping. \\ Reference: John \textsc{McDonald}\ \ $\cdotp$\ \ +1 (000) 111 1111\ \ $\cdotp$\ \ \href{mailto:john@lehman.com}{john@lehman.com}}
+\NewEntry{Software Engineer -- Sketchdeck Inc.}{Fall 2016--\newline Winter 2018}{Developed and maintained SaaS web application.\newline Designed, proposed, developed, and deployed internal and external tools.}
 
 %------------------------------------------------
 
-\NewEntry{Software Engineering Intern -- Addteq Inc.}{Summer 2015}{Replace dummy data here! Rated "truly distinctive" for Analytical Skills and Teamwork. \\ Reference: Bill \textsc{Lumbergh}\ \ +1 (000) 111 1111\ \ $\cdotp$\ \ \href{mailto:bill@initech.com}{bill@initech.com}}
+\NewEntry{Software Engineering Intern -- Addteq Inc.}{Summer 2015}{Designed and developed platform for automatic setup of Atlassian tools.}
 
 %------------------------------------------------
 
-\NewEntry{Software Engineer -- Rutgers University}{Fall 2013--\newline Winter 2014}{Replace dummy data here! Worked in the Nerd Herd and helped to solve computer problems by asking customers to turn their computers off and on again. \\ Reference: Big \textsc{Mike}\ \ +1 (000) 111 1111\ \ $\cdotp$\ \ \href{mailto:mike@buymore.com}{mike@buymore.com}}
-
-%------------------------------------------------
+\NewEntry{Software Engineer -- Rutgers University}{Fall 2013--\newline Winter 2014}{Refactored simulation-heavy program originally created by untrained programmer.  Focus on stability, performance, and readibility.\newline Architectural redesign allowing for multithreaded simulation.}
 
 \vspace{1em} % Extra space between major sections
 
 %----------------------------------------------------------------------------------------
-%	PUBLICATIONS
+%	PROJECTS
 %----------------------------------------------------------------------------------------
 
 \SectionName{Projects}
