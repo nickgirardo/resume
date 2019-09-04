@@ -20,7 +20,7 @@
 
 \documentclass{scrartcl}
 
-\reversemarginpar % Move the margin to the left of the page 
+\reversemarginpar{} % Move the margin to the left of the page
 
 \usepackage[nochapters]{classicthesis} % Use the classicthesis style for the style of the document
 \usepackage[LabelsAligned]{currvita} % Use the currvita style for the layout of the document
@@ -51,7 +51,7 @@
 \vspace{0.25em}} % Add some white space after each new entry
 
 \usepackage[marginparsep=-1em, bottom=1em, top=8em]{geometry}
-\newcommand{\MarginText}[1]{\marginpar{\raggedleft\itshape\small#1}} % New command defining the margin text style
+\newcommand{\MarginText}[1]{\marginpar{\raggedleft\itshape\small#1\/}} % New command defining the margin text style
 
 \newcommand{\SectionName}[1]{\noindent\spacedlowsmallcaps{#1}\vspace{0.25em}}
 
@@ -67,15 +67,20 @@
 
 \begin{cv}{\spacedallcaps{Nick Girardo}}\vspace{1.5em} % Your name
 
-\SectionName{Personal Information} % Personal information heading
+% Personal information heading
+\SectionName{Personal Information}
 
-\PersonalInfoItem{email}{\href{mailto:nickgirardo@gmail.com}{nickgirardo@gmail.com}} % Email address
+% Email address
+\PersonalInfoItem{email}{\href{mailto:nickgirardo@gmail.com}{nickgirardo@gmail.com}}
 
-\PersonalInfoItem{website}{\href{https://nickgirardo.github.io/}{https://nickgirardo.github.io/}} % Personal website
+% Personal website
+\PersonalInfoItem{website}{\href{https://nickgirardo.github.io/}{https://nickgirardo.github.io/}}
 
-\PersonalInfoItem{github}{\href{https://github.com/nickgirardo}{nickgirardo}} % Github profile
+% Github profile
+\PersonalInfoItem{github}{\href{https://github.com/nickgirardo}{nickgirardo}}
 
-\PersonalInfoItem{phone}{+1 (856) 520-5481} % Phone number
+% Phone number
+\PersonalInfoItem{phone}{+1 (856) 520-5481} % chktex 8
 
 \vspace{1em} % Extra white space after the personal information section
 
@@ -85,15 +90,15 @@
 
 \SectionName{Work Experience}
 
-\NewEntry{Software Engineer -- Sketchdeck Inc.}{Fall 2016--\newline Winter 2018}{Developed and maintained SaaS web application.\newline Designed, proposed, developed, and deployed internal and external tools.}
+\NewEntry{Software Engineer -- Sketchdeck Inc.}{Fall 2016--\newline Winter 2018}{Developed and maintained SaaS web application.\newline Designed, proposed, developed, and deployed internal and external tools.} % chktex 8
 
 %------------------------------------------------
 
-\NewEntry{Software Engineering Intern -- Addteq Inc.}{Summer 2015}{Designed and developed platform for automatic setup of Atlassian tools.}
+\NewEntry{Software Engineering Intern -- Addteq Inc.}{Summer 2015}{Designed and developed platform for automatic setup of Atlassian tools.} % chktex 8
 
 %------------------------------------------------
 
-\NewEntry{Software Engineer -- Rutgers University}{Fall 2013--\newline Winter 2014}{Refactored simulation-heavy program originally created by untrained programmer.  Focus on stability, performance, and readability.\newline Architectural redesign allowing for multithreaded simulation.}
+\NewEntry{Software Engineer -- Rutgers University}{Fall 2013--\newline Winter 2014}{Refactored simulation-heavy program originally created by untrained programmer.  Focus on stability, performance, and readability.\newline Architectural redesign allowing for multithreaded simulation.} % chktex 8
 
 \vspace{1em} % Extra space between major sections
 
@@ -105,7 +110,7 @@
 
 \NewEntry{WebAssembly Boids}{Fall 2018}{Classic boids simulation running in hand-written WebAssembly.\newline Exploration of WebAssembly's interface and performance.\newline View demo: \href{https://nickgirardo.github.io/animation-tests/wasm-boids/}{hsttp://nickgirardo.github.io/animation-tests/wasm-boids/}\newline View source: \href{https://github.com/nickgirardo/wasm-boids}{https://github.com/nickgirardo/wasm-boids}}
 
-\NewEntry{Cel Shaded AA Demo -- WebGL 2 Port}{Fall 2018}{WebGL 2 port of Philip Rideout's "Antialiased Cel Shading" demo.\newline Exploration of shading and tesselation in WebGL 2.\newline View demo: \href{https://nickgirardo.github.io/trefoil/}{https://nickgirardo.github.io/trefoil/}\newline View source: \href{https://github.com/nickgirardo/wasm-boids}{https://github.com/nickgirardo/wasm-boids}}
+\NewEntry{Cel Shaded AA Demo -- WebGL 2 Port}{Fall 2018}{WebGL 2 port of Philip Rideout's ``Antialiased Cel Shading'' demo.\newline Exploration of shading and tesselation in WebGL 2.\newline View demo: \href{https://nickgirardo.github.io/trefoil/}{https://nickgirardo.github.io/trefoil/}\newline View source: \href{https://github.com/nickgirardo/wasm-boids}{https://github.com/nickgirardo/wasm-boids}} % chktex 8
 
 \NewEntry{Context Play/ Pause}{Summer 2018}{Firefox WebExtension allowing users to play or pause videos from a tab's context menu.\newline View Add-on: \href{https://addons.mozilla.org/en-US/firefox/addon/context-play-pause/}{https://addons.mozilla.org/en-US/firefox/addon/context-play-pause/}\newline View source: \href{https://github.com/nickgirardo/context-play-pause}{https://github.com/nickgirardo/context-play-pause}}
 
@@ -121,7 +126,7 @@
 
 \SectionName{Education}
 
-\NewEntry{Rutgers, the State University of New Jersey, New Brunswick}{2012-2016}{Major in Computer Science, School of Arts and Sciences}
+\NewEntry{Rutgers, the State University of New Jersey, New Brunswick}{2012-2016}{Major in Computer Science, School of Arts and Sciences} % chktex 8
 
 \vspace{1em} % Extra space between major sections
 
