@@ -11,13 +11,11 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v2
-      - name: latex2pdf
+      - name: Build PDF
         id: compile-latex-document
-        uses: thomas-chauvet/latex2pdf-action@1.0.1
+        uses: dante-ev/latex-action@master
         with:
-          output_dir: build
-          main_latex_file: resume.tex
-          ctan_packages: scrartcl classicthesis currvita hyperref geometry
+          root_file: resume.tex
       - name: Debug print
         run: |
           ls
