@@ -17,7 +17,7 @@ jobs:
         with:
           output_dir: build
           main_latex_file: resume.tex
-          ctan_packages: classicthesis currvita hyperref geometry
+          ctan_packages: scrartcl classicthesis currvita hyperref geometry
       - name: Debug print
         run: |
           ls
