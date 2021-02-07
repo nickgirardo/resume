@@ -12,13 +12,13 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v2
       - name: Build PDF
-        id: compile-latex-document
-        uses: thomas-chauvet/latex2pdf-action@1.0.1
+        uses: dante-ev/latex-action@master
         with:
-          output_dir: build
-          main_latex_file: resume.tex
-          ctan_packages: koma-script classicthesis currvita hyperref geometry tex-gyre-pagella
+          root_file: resume.tex
+          args: -pdf -latexoption=-file-line-error -latexoption=-interaction=nonstopmode -outdir=build
       - name: Debug print
         run: |
+          echo "root dir:"
           ls
+          echo "build dir:"
           ls build
