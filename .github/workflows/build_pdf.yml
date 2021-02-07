@@ -22,7 +22,7 @@ jobs:
           mkdir build
           cp resume.pdf build/
       - name: Sync PDF
-		uses: jakejarvis/s3-sync-action@master
+        uses: jakejarvis/s3-sync-action@master
         with:
           args: --acl public-read
         env:
