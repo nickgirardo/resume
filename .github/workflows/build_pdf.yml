@@ -17,7 +17,7 @@ jobs:
         with:
           output_dir: build
           main_latex_file: resume.tex
-          ctan_packages: koma-script classicthesis currvita hyperref geometry
+          ctan_packages: koma-script classicthesis currvita hyperref geometry tex-gyre-pagella
       - name: Debug print
         run: |
           ls
