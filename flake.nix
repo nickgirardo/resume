@@ -1,37 +1,50 @@
 {
   description = "Nick's Resume :)";
 
+  inputs.nixpkgs.url = "github:nixos/nixpkgs/release-23.11";
+
   outputs = { self, nixpkgs }:
     let
-      pkgs = import nixpkgs { system = "x86_64-linux"; };
-      tex = pkgs.texlive.combine {
-          inherit (pkgs.texlive) scheme-full latex-bin latexmk;
-      };
-      buildInputs = [ pkgs.coreutils tex ];
-      lastUpdatedDate = "2021-11-30";
-      in
-    {
-      packages.x86_64-linux.default = pkgs.stdenvNoCC.mkDerivation {
-        name = "resume";
-        src = self;
-        inherit buildInputs;
-        phases = [ "unpackPhase" "buildPhase" "installPhase" ];
-        buildPhase = ''
-            export PATH="${pkgs.lib.makeBinPath buildInputs}";
+      supportedSystems = ["x86_64-linux" "aarch64-linux"];
+      forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
 
-            # NOTE this variable is used as the current timestamp by TeX
-            # It is used to print the last updated date in the document's footer
-            export SOURCE_DATE_EPOCH="$(date -d ${lastUpdatedDate} +%s)";
+      drv = forAllSystems (system:
+        let
+          pkgs = import nixpkgs { inherit system; };
+          tex = pkgs.texlive.combine {
+              inherit (pkgs.texlive) scheme-full latex-bin latexmk;
+          };
+          buildInputs = [ pkgs.coreutils tex ];
+          lastUpdatedDate = "2021-11-30";
+        in
+            pkgs.stdenvNoCC.mkDerivation {
+              name = "resume";
+              src = self;
+              inherit buildInputs;
+              phases = [ "unpackPhase" "buildPhase" "installPhase" ];
+              buildPhase = ''
+                  export PATH="${pkgs.lib.makeBinPath buildInputs}";
 
-            mkdir -p .cache/texmf-var
-            env TEXMFHOME=.cache TEXMFVAR=.cache/texmf-var \
-              latexmk -interaction=nonstopmode -pdf -lualatex \
-              resume.tex
-          '';
-          installPhase = ''
-            mkdir -p $out
-            cp resume.pdf $out/
-          '';
-        };
+                  # NOTE this variable is used as the current timestamp by TeX
+                  # It is used to print the last updated date in the document's footer
+                  export SOURCE_DATE_EPOCH="$(date -d ${lastUpdatedDate} +%s)";
+
+                  mkdir -p .cache/texmf-var
+                  env TEXMFHOME=.cache TEXMFVAR=.cache/texmf-var \
+                    latexmk -interaction=nonstopmode -pdf -lualatex \
+                    resume.tex
+                '';
+                installPhase = ''
+                  mkdir -p $out/dist/
+                  cp resume.pdf $out/dist/
+                '';
+            }
+      );
+    in
+      {
+        packages = forAllSystems (system:  {
+          default = drv.${system};
+          resume = drv.${system};
+        });
       };
 }
