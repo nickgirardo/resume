@@ -1,9 +1,15 @@
 {
   description = "Nick's Resume :)";
 
-  inputs.nixpkgs.url = "github:nixos/nixpkgs/release-23.11";
+  inputs = {
+    nixpkgs.url = "github:nixos/nixpkgs/release-23.11";
+    gitignore = {
+      url = "github:hercules-ci/gitignore.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
 
-  outputs = { self, nixpkgs }:
+  outputs = { self, nixpkgs, gitignore }:
     let
       supportedSystems = ["x86_64-linux" "aarch64-linux"];
       forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
@@ -19,7 +25,7 @@
         in
             pkgs.stdenvNoCC.mkDerivation {
               name = "resume";
-              src = self;
+              src = gitignore.lib.gitignoreSource ./.;
               inherit buildInputs;
               phases = [ "unpackPhase" "buildPhase" "installPhase" ];
               buildPhase = ''
