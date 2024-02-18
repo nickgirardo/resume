@@ -70,6 +70,8 @@
 
 \newcommand{\DateRange}[2]{#1--\newline #2}
 
+\newcommand{\SelfHref}[1]{\href{#1}{#1}}
+
 %----------------------------------------------------------------------------------------
 
 \begin{document}
@@ -92,7 +94,7 @@
 \PersonalInfoItem{email}{\href{mailto:nickgirardo@gmail.com}{nickgirardo@gmail.com}}
 
 % Personal website
-\PersonalInfoItem{website}{\href{https://nickgirardo.com/}{https://nickgirardo.com/}}
+\PersonalInfoItem{website}{\SelfHref{https://nickgirardo.com/}}
 
 % Github profile
 \PersonalInfoItem{github}{\href{https://github.com/nickgirardo}{nickgirardo}}
@@ -103,6 +105,15 @@
 
 \SectionName{Work Experience}
 
+% TODO content
+\NewEntry{Senior Software Engineer -- Bitnomial Inc.}
+         {\DateRange{October 2021}{June 2023}}
+         {Developed and maintained SaaS web application\newline
+  Responsible for code quality standards and application architecture\newline
+  Developed recruitment strategy and mentored team members\newline
+  Worked across teams to plan and manage platform roadmap
+}
+
 \NewEntry{Software Engineer -- OnSiteIQ Inc.}
          {\DateRange{February 2019}{April 2021}}
          {Developed and maintained SaaS web application\newline
@@ -111,19 +122,15 @@
   Worked across teams to plan and manage platform roadmap
 }
 
-%------------------------------------------------
-
 \NewEntry{Software Engineer -- Sketchdeck Inc.}
          {\DateRange{October 2016}{February 2018}}
          {Developed and maintained SaaS web application\newline
   Designed, proposed, developed, and deployed internal and external tools
 }
 
-%------------------------------------------------
-
 \NewEntry{Software Engineering Intern -- Addteq Inc.}
          {Summer 2015}
-         {Designed and developed platform for automatic setup of Atlassian tools}
+         {Designed and developed platform for automated setup of Atlassian tools}
 
 %----------------------------------------------------------------------------------------
 % PROJECTS
@@ -131,36 +138,38 @@
 
 \SectionName{Projects}
 
+\NewEntry{Trone}
+         {Winter 2024}
+         {Ultra-minimal kanban tool\newline
+  Focuses on providing a straightforward and distraction-free kanban experience\newline
+  View: \SelfHref{https://nickgirardo.com/trone/index.html}\newline
+  View source: \SelfHref{https://github.com/nickgirardo/trone}
+  View source: \SelfHref{https://github.com/nickgirardo/trone}
+}
+
 \NewEntry{mathjax-loader}
          {Summer 2021}
          {Webpack loader to transform TeX and MathML files to SVGs via MathJax\newline
   Trivializes creating documents with well rendered mathematical expressions\newline
-  View on NPM: \href{https://www.npmjs.com/package/mathjax-loader}{https://www.npmjs.com/package/mathjax-loader}\newline
-  View source: \href{https://github.com/nickgirardo/mathjax-loader}{https://github.com/nickgirardo/mathjax-loader}
+  View on NPM: \SelfHref{https://www.npmjs.com/package/mathjax-loader}\newline
+  View source: \SelfHref{https://github.com/nickgirardo/mathjax-loader}
 }
 
-\NewEntry{Sudoku Player}
+\NewEntry{Sudoku}
          {Summer 2021}
          {Simple Sudoku implementation with boards encoded in query string\newline
   This alternative approach to storage has many advantages for operator and player (see README)\newline
-  View player: \href{https://nickgirardo.com/projects/sudoku/player.html}{https://nickgirardo.com/projects/sudoku/player.html}\newline
-  View builder: \href{https://nickgirardo.com/projects/sudoku/builder.html}{https://nickgirardo.com/projects/sudoku/builder.html}\newline
-  View source: \href{https://github.com/nickgirardo/sudoku}{https://github.com/nickgirardo/sudoku}
+  View player: \SelfHref{https://nickgirardo.com/projects/sudoku/player.html}\newline
+  View builder: \SelfHref{https://nickgirardo.com/projects/sudoku/builder.html}\newline
+  View source: \SelfHref{https://github.com/nickgirardo/sudoku}
 }
 
-\NewEntry{WebAssembly Boids}
-         {Fall 2018}
-         {Classic boids simulation running in hand-written WebAssembly\newline
-  Exploration of WebAssembly's interface and performance\newline
-  View demo: \href{https://nickgirardo.com/projects/wasm-boids/index.html}{https://nickgirardo.com/projects/wasm-boids/index.html}\newline
-  View source: \href{https://github.com/nickgirardo/wasm-boids}{https://github.com/nickgirardo/wasm-boids}
-}
-
+% TODO maybe remove?
 \NewEntry{Context Play/ Pause}
          {Summer 2018}
          {Firefox WebExtension allowing users to play or pause videos from a tab's context menu\newline
-  View Add-on: \href{https://addons.mozilla.org/en-US/firefox/addon/context-play-pause/}{https://addons.mozilla.org/en-US/firefox/addon/context-play-pause/}\newline
-  View source: \href{https://github.com/nickgirardo/context-play-pause}{https://github.com/nickgirardo/context-play-pause}
+  View Add-on: \SelfHref{https://addons.mozilla.org/en-US/firefox/addon/context-play-pause/}\newline
+  View source: \SelfHref{https://github.com/nickgirardo/context-play-pause}
 }
 
 %----------------------------------------------------------------------------------------
