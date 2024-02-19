@@ -59,11 +59,11 @@
 }
 
 % Margin text styling
-\usepackage[marginparsep=-1em, bottom=1em, top=8em]{geometry}
+\usepackage[marginparsep=-1em, bottom=1em, top=6em]{geometry}
 \newcommand{\MarginText}[1]{\marginpar{\raggedleft\itshape\small#1\/}}
 
 \newcommand{\SectionName}[1]{
-  \vspace{1em}
+  \vspace{0.75em}
   \noindent\spacedlowsmallcaps{#1}
   \vspace{0.25em}
 }
@@ -72,6 +72,8 @@
 
 \newcommand{\DateRange}[2]{#1--\newline #2}
 
+% Utility command for when the text of the link is the link
+% Provided as the majority of links in this document work this way
 \newcommand{\SelfHref}[1]{\href{#1}{#1}}
 
 %----------------------------------------------------------------------------------------
@@ -150,7 +152,6 @@
 \NewEntry{mathjax-loader}
          {Summer 2021}
          {Webpack loader to transform TeX and MathML files to SVGs via MathJax\newline
-  Trivializes creating documents with well rendered mathematical expressions\newline
   View on NPM: \SelfHref{https://www.npmjs.com/package/mathjax-loader}\newline
   View source: \SelfHref{https://github.com/nickgirardo/mathjax-loader}
 }
@@ -158,13 +159,12 @@
 \NewEntry{Sudoku}
          {Summer 2021}
          {Simple Sudoku implementation with boards encoded in query string\newline
-  This alternative approach to storage has many advantages for operator and player (see README)\newline
+  Allows sharing levels without requiring the operator to maintain a database\newline
   View player: \SelfHref{https://nickgirardo.com/projects/sudoku/player.html}\newline
   View builder: \SelfHref{https://nickgirardo.com/projects/sudoku/builder.html}\newline
   View source: \SelfHref{https://github.com/nickgirardo/sudoku}
 }
 
-% TODO maybe remove?
 \NewEntry{Context Play/ Pause}
          {Summer 2018}
          {Firefox WebExtension allowing users to play or pause videos from a tab's context menu\newline
