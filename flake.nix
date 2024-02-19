@@ -21,7 +21,7 @@
               inherit (pkgs.texlive) scheme-full latex-bin latexmk;
           };
           buildInputs = [ pkgs.coreutils tex ];
-          lastUpdatedDate = "2021-11-30";
+          lastUpdatedDate = "2024-02-18";
         in
             pkgs.stdenvNoCC.mkDerivation {
               name = "resume";
